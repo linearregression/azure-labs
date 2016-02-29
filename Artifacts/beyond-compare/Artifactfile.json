@@ -11,6 +11,6 @@
     "parameters": {
   },
   "runCommand": {
-    "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File installbc.ps1"
+    "commandToExecute": "powershell.exe -File installbc.ps1"
   }
 }
