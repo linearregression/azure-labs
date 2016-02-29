@@ -1,40 +1,20 @@
-﻿Function Get-RedirectedUrl
-{
-    Param (
-        [Parameter(Mandatory=$true)]
-        [String]$URL
-    )
- 
-    $request = [System.Net.WebRequest]::Create($url)
-    $request.AllowAutoRedirect=$false
-    $response=$request.GetResponse()
- 
-    If ($response.StatusCode -eq "Found")
-    {
-        $response.GetResponseHeader("Location")
-    }
-}
-
-$url = 'http://go.microsoft.com/fwlink/?LinkID=623230'
-$codeSetupUrl = Get-RedirectedUrl -URL $url
-
-$infPath = $PSScriptRoot + "\vscode.inf"
-$vscodeSetup = "${env:Temp}\VSCodeSetup.exe"
+﻿$bcSetupUrl = 'http://www.scootersoftware.com/BCompare-4.1.3.20814.exe'
+$bcSetup = "${env:Temp}\bcompare4.exe"
 
 try
 {
-    Invoke-WebRequest -Uri $codeSetupUrl -OutFile $vscodeSetup
+    Invoke-WebRequest -Uri $bcSetupUrl -OutFile $bcSetup
 }
 catch
 {
-    Write-Error "Failed to download VSCode Setup"
+    Write-Error "Failed to download BeyondCompare 4 Setup"
 }
 
 try
 {
-    Start-Process -FilePath $vscodeSetup -ArgumentList "/VERYSILENT /LOADINF=$infPath"
+    Start-Process -FilePath $bcSetup"
 }
 catch
 {
-    Write-Error 'Failed to install VSCode'
+    Write-Error 'Failed to install BeyondCompare 4'
 }
