@@ -1,5 +1,5 @@
 ﻿$bcSetupUrl = 'http://www.scootersoftware.com/BCompare-4.1.3.20814.exe'
-$bcSetup = "${env:Temp}\bcompare4.exe"
+$bcSetup = "${env:Temp}\BCompare-4.1.3.20814.exe"
 
 try
 {
