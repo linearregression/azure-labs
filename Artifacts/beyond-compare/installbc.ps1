@@ -12,7 +12,7 @@ catch
 
 try
 {
-    Start-Process -FilePath $bcSetup"
+    Start-Process -FilePath $bcSetup
 }
 catch
 {

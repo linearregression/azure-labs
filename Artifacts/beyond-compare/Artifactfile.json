@@ -8,6 +8,8 @@
   ],
   "iconUri": "http://www.scootersoftware.com/images/BC4Logo.png",
   "targetOsType": "Windows",
+    "parameters": {
+  },
   "runCommand": {
     "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File installbc.ps1"
   }
