@@ -1,0 +1,6 @@
+[Setup]
+Lang=english
+Dir=C:\Program Files\Beyond Compare 4
+Group=Beyond Compare
+NoIcons=0
+Tasks=desktopicon,addcontextmenufiles,addcontextmenufolders,addtopath

@@ -1,5 +1,6 @@
 ﻿$bcSetupUrl = 'http://www.scootersoftware.com/BCompare-4.1.3.20814.exe'
 $bcSetup = "${env:Temp}\BCompare-4.1.3.20814.exe"
+$infPath = $PSScriptRoot + "\beyondcompare.inf"
 
 try
 {
@@ -12,7 +13,7 @@ catch
 
 try
 {
-    Start-Process -FilePath $bcSetup
+    Start-Process -FilePath $bcSetup -ArgumentList "/VERYSILENT /LOADINF=$infPath"
 }
 catch
 {
